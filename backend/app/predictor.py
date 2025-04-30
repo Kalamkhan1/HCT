@@ -2,7 +2,6 @@ import joblib
 import json
 import numpy as np
 from scipy.stats import rankdata
-from app.utils import sigmoid_scale
 
 class EnsemblePredictor:
     def __init__(self, model_paths: list, weights_path: str):
@@ -54,30 +53,32 @@ class EnsemblePredictor:
         with open(weights_path, 'r') as f:
             scaling_info = json.load(f)
             self.ensemble_weights = list(scaling_info["weights"].values())
-            self.min_val - scaling_info["min_val"]
-            self.max_val - scaling_info["max_val"]
+            self.min_val = scaling_info["min_val"]
+            self.max_val = scaling_info["max_val"]
 
 
     def infer_model(self, data, models):
-        
         data = data.drop(['ID'], axis=1)
-
         for col in self.cat_cols:
             data[col] = data[col].astype('category')
 
-        return np.mean([model.predict(data) for model in models], axis=0)
+        predictions = [model.predict(data) for model in models]
+        print("Individual model predictions:", predictions)  
+        return np.mean(predictions, axis=0)
 
 
     def predict_with_ensemble(self, data):
-
-        ranked_preds = []
+        all_preds = []
 
         for model_group in self.ensemble_models:
-            preds = self.infer_model(data.copy(), model_group)
-            ranked_preds.append(rankdata(preds))
+            preds = self.infer_model(data.copy(), model_group)  # shape (1,)
+            all_preds.append(preds[0])  # get scalar from single-row prediction
 
-        ranked_preds = np.array(ranked_preds)
-        preds = np.dot(self.ensemble_weights, ranked_preds)
-        preds = 1 + 99 * ((preds - self.min_val) / 
-                               (self.max_val - self.min_val))
-        return preds
+        all_preds = np.array(all_preds)  # shape (n_models,)
+        final_pred = np.dot(self.ensemble_weights, all_preds)  # scalar
+        print(final_pred)
+        final_pred = 1 + 99 * ((final_pred - self.min_val) / 
+                            (self.max_val - self.min_val))
+        final_pred = np.clip(final_pred, 1, 100)
+        print("Final normalized prediction:", final_pred)
+        return final_pred

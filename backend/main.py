@@ -4,9 +4,18 @@ from app.predictor import EnsemblePredictor
 import pandas as pd
 from app.utils import update_hla_columns
 import polars as pl
+from fastapi.middleware.cors import CORSMiddleware 
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 
@@ -22,12 +31,11 @@ predictor = EnsemblePredictor(
 def predict(data: InputData):
     # Convert pydantic model to Pandas
     input_df = pd.DataFrame([data.model_dump()])
-
+    print(input_df)
     # Use Polars to apply HLA logic
     pl_df = pl.DataFrame(input_df)
     pl_df = update_hla_columns(pl_df)
 
-    # Convert back to Pandas for sklearn model
     updated_df = pl_df.to_pandas()
 
     # Make prediction

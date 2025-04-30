@@ -1,0 +1,72 @@
+{
+  "Disease & Risk Index Variables" : {
+  "dri_score": {"description": "Refined disease risk index", "type": "Categorical", "values": ["Intermediate", "High", "N/A - non-malignant indication", "N/A - pediatric", "High - TED AML case <missing cytogenetics", "TBD cytogenetics", "Low", "Intermediate - TED AML case <missing cytogenetics", "N/A - disease not classifiable", "Very high", "Missing disease status", "Unknown"]},
+  "cyto_score": {"description": "Cytogenetic score", "type": "Categorical", "values": ["Intermediate", "Favorable", "Poor", "TBD", "Unknown", "Normal", "Other", "Not tested"]},
+  "cyto_score_detail": {"description": "Cytogenetics for DRI (AML/MDS)", "type": "Categorical", "values": ["Intermediate", "TBD", "Favorable", "Poor", "Not tested", "Unknown"]},
+  "mrd_hct": {"description": "MRD at time of HCT (AML/ALL)", "type": "Categorical", "values": ["Negative", "Positive", "Unknown"]},
+  "prim_disease_hct": {"description": "Primary disease for HCT", "type": "Categorical", "values": ["ALL", "MPN", "IPA", "AML", "MDS", "Other acute leukemia", "AI", "SAA", "IEA", "NHL", "PCD", "IIS", "HIS", "Other leukemia", "Solid tumor", "IMD", "HD", "CML"]}
+  },
+  "Medical History / Comorbidities" : {
+  "psych_disturb": {"description": "Psychiatric disturbance", "type": "Categorical", "values": ["Yes", "No", "Unknown", "Not done"]},
+  "diabetes": {"description": "Diabetes", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "arrhythmia": {"description": "Arrhythmia", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "renal_issue": {"description": "Renal, moderate / severe", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "hepatic_severe": {"description": "Hepatic, moderate / severe", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "hepatic_mild": {"description": "Hepatic, mild", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "pulm_severe": {"description": "Pulmonary, severe", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "pulm_moderate": {"description": "Pulmonary, moderate", "type": "Categorical", "values": ["Yes", "Not done", "No", "Unknown"]},
+  "rheum_issue": {"description": "Rheumatologic", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "cardiac": {"description": "Cardiac", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "peptic_ulcer": {"description": "Peptic ulcer", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]},
+  "prior_tumor": {"description": "Solid tumor, prior", "type": "Categorical", "values": ["Yes", "No", "Unknown", "Not done"]},
+  "obesity": {"description": "Obesity", "type": "Categorical", "values": ["No", "Yes", "Unknown", "Not done"]}
+  },
+  "HLA Matching (High and Low Resolution)": {
+  "hla_match_a_high": {"description": "Recipient / 1st donor allele level (high resolution) matching at HLA-A", "type": "Numerical", "values": []},
+  "hla_match_b_high": {"description": "Recipient / 1st donor allele level (high resolution) matching at HLA-B", "type": "Numerical", "values": []},
+  "hla_match_c_high": {"description": "Recipient / 1st donor allele level (high resolution) matching at HLA-C", "type": "Numerical", "values": []},
+  "hla_match_drb1_high": {"description": "Recipient / 1st donor allele level (high resolution) matching at HLA-DRB1", "type": "Numerical", "values": []},
+  "hla_match_dqb1_high": {"description": "Recipient / 1st donor allele level (high resolution) matching at HLA-DQB1", "type": "Numerical", "values": []},
+  "hla_match_a_low": {"description": "Recipient / 1st donor antigen level (low resolution) matching at HLA-A", "type": "Numerical", "values": []},
+  "hla_match_b_low": {"description": "Recipient / 1st donor antigen level (low resolution) matching at HLA-B", "type": "Numerical", "values": []},
+  "hla_match_c_low": {"description": "Recipient / 1st donor antigen level (low resolution) matching at HLA-C", "type": "Numerical", "values": []},
+  "hla_match_drb1_low": {"description": "Recipient / 1st donor antigen level (low resolution) matching at HLA-DRB1", "type": "Numerical", "values": []},
+  "hla_match_dqb1_low": {"description": "Recipient / 1st donor antigen level (low resolution) matching at HLA-DQB1", "type": "Numerical", "values": []},
+  "hla_high_res_6": {"description": "Recipient / 1st donor allele-level (high resolution) matching at HLA-A,-B,-DRB1", "type": "Numerical", "values": []},
+  "hla_high_res_8": {"description": "Recipient / 1st donor allele-level (high resolution) matching at HLA-A,-B,-C,-DRB1", "type": "Numerical", "values": []},
+  "hla_high_res_10": {"description": "Recipient / 1st donor allele-level (high resolution) matching at HLA-A,-B,-C,-DRB1,-DQB1", "type": "Numerical", "values": []},
+  "hla_low_res_6": {"description": "Recipient / 1st donor antigen-level (low resolution) matching at HLA-A,-B,-DRB1", "type": "Numerical", "values": []},
+  "hla_low_res_8": {"description": "Recipient / 1st donor antigen-level (low resolution) matching at HLA-A,-B,-C,-DRB1", "type": "Numerical", "values": []},
+  "hla_low_res_10": {"description": "Low-resolution match over 10 loci", "type": "Numerical", "values": []},
+  "hla_nmdp_6": {"description": "Recipient / 1st donor matching at HLA-A(lo),-B(lo),-DRB1(hi)", "type": "Numerical", "values": []},
+  "tce_match": {"description": "T-cell epitope matching", "type": "Categorical", "values": ["Permissive", "Fully matched", "GvH non-permissive", "HvG non-permissive", "Unknown"]},
+  "tce_div_match": {"description": "T-cell epitope matching", "type": "Categorical", "values": ["Permissive mismatched", "Bi-directional non-permissive", "GvH non-permissive", "HvG non-permissive", "Unknown"]},
+  "tce_imm_match": {"description": "T-cell epitope immunogenicity/diversity match", "type": "Categorical", "values": ["P/P", "G/G", "H/H", "G/B", "H/B", "P/H", "P/G", "P/B", "Unknown"]}
+  },
+  "Transplant Conditioning / Treatment" : {
+  "tbi_status": {"description": "TBI (Total Body Irradiation)", "type": "Categorical", "values": ["No TBI", "TBI + Cy +- Other", "TBI +- Other, <=cGy", "TBI +- Other, >cGy", "TBI +- Other, -cGy, single", "TBI +- Other, unknown dose", "TBI +- Other, -cGy, unknown dose", "TBI +- Other, -cGy, fractionated"]},
+  "conditioning_intensity": {"description": "Computed planned conditioning intensity", "type": "Categorical", "values": ["RIC", "NMA", "MAC", "TBD", "No drugs reported", "N/A, F(pre-TED) not submitted", "Unknown"]},
+  "melphalan_dose": {"description": "Melphalan dose (mg/m^2)", "type": "Categorical", "values": ["N/A, Mel not given", "MEL", "Unknown"]},
+  "rituximab": {"description": "Rituximab given in conditioning", "type": "Categorical", "values": ["No", "Yes", "Unknown"]},
+  "gvhd_proph": {"description": "Planned GVHD prophylaxis", "type": "Categorical", "values": ["FK+ MMF +- others", "Parent Q = yes, but no agent", "FK+ MTX +- others(not MMF)", "FKalone", "Cyclophosphamide alone", "CSA + MMF +- others(not FK)", "TDEPLETION +- other", "Cyclophosphamide +- others", "No GvHD Prophylaxis", "Other GVHD Prophylaxis", "CSA alone", "TDEPLETION alone", "CDselect alone", "CSA + MTX +- others(not MMF,FK)", "FK+- others(not MMF,MTX)", "CDselect +- other", "CSA +- others(not FK,MMF,MTX)", "Unknown"]},
+  "in_vivo_tcd": {"description": "In-vivo T-cell depletion (ATG/alemtuzumab)", "type": "Categorical", "values": ["Yes", "No", "Unknown"]}
+  },
+  "Graft & Donor Info" : {
+  "graft_type": {"description": "Graft type", "type": "Categorical", "values": ["Peripheral blood", "Bone marrow"]},
+  "prod_type": {"description": "Product type", "type": "Categorical", "values": ["PB", "BM"]},
+  "donor_related": {"description": "Related vs. unrelated donor", "type": "Categorical", "values": ["Unrelated", "Related", "Multiple donor (non-UCB)", "Unknown"]},
+  "donor_age": {"description": "Donor age", "type": "Numerical", "values": []},
+  "sex_match": {"description": "Donor/recipient sex match", "type": "Categorical", "values": ["M-M", "F-F", "F-M", "M-F", "Unknown"]},
+  "cmv_status": {"description": "Donor/recipient CMV serostatus", "type": "Categorical", "values": ["+/-", "+/+", "-/-", "-/+", "Unknown"]}
+  },
+  "Clinical / Functional Status":{
+  "karnofsky_score": {"description": "KPS at HCT", "type": "Numerical", "values": []},
+  "comorbidity_score": {"description": "Sorror comorbidity score", "type": "Numerical", "values": []},
+  "vent_hist": {"description": "History of mechanical ventilation", "type": "Categorical", "values": ["No", "Yes", "Unknown"]}
+  },
+  "Demographics": {
+  "age_at_hct": {"description": "Age at HCT", "type": "Numerical", "values": []},
+  "ethnicity": {"description": "Ethnicity", "type": "Categorical", "values": ["Not Hispanic or Latino", "Hispanic or Latino", "Unknown", "Non-resident of the U.S."]},
+  "race_group": {"description": "Race", "type": "Categorical", "values": ["White", "Black or African-American", "Native Hawaiian or other Pacific Islander", "Asian", "American Indian or Alaska Native", "More than one race"]},
+  "year_hct": {"description": "Year of HCT", "type": "Numerical", "values": []}
+  }}

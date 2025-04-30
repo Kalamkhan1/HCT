@@ -59,5 +59,4 @@ class InputData(BaseModel):
     hla_match_drb1_high: float = Field(default=0.0)
     pulm_moderate: str = Field(default="Unknown")
     hla_low_res_10: float = Field(default=0.0)
-
     ID: Optional[int] = Field(default=None)
