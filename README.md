@@ -13,6 +13,7 @@ A robust machine learning-based system for predicting post-transplant survival o
 - 🌐 FastAPI backend and Next.js frontend for real-time access and prediction
 
 ---
+🎥 [📽️ Watch Demo Video](./demo_video.mp4)
 
 ## 🔧 Backend (FastAPI)
 
